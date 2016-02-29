@@ -15,12 +15,10 @@ $(function() {
     
     // HINT: use the .hasClass() jQuery method to check what the item clicked is
 
-    if (item.hasClass("fruit")) {
-      score = parseInt(score) + 5;
-    } else if (item.hasClass("bomb")) {
-      score = parseInt(score) - 10;
-      bombCounter++;
-    }
+
+
+
+
 
 
     
@@ -45,10 +43,12 @@ $(function() {
     //   then call the .fadeOut() method on the board
     //   and change the title text to say "Game Over!" 
 
-    if (bombCounter > 2) {
-      $("#board").fadeOut();
-      $("#title").text("Game Over!");
-    }
+
+
+
+
+
+
 
   });
 });
