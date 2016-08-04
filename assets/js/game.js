@@ -1,12 +1,19 @@
-$(function() {
-  var bombCounter = 0;
+/*global $*/
+    $(function() {
+    var bombCounter = 0;
 
-  $('#board img').click(function() {
+    $('#board img').click(function() {
     var item = $(this);
     var score = $('#score').text();
 
     //  Write an IF / ELSE IF conditional statement:
-
+    if (item.hasClass("fruit")) { 
+      score = parseInt(score)+5;
+    } else if (item.hasClass("bomb")) {
+      score = parseInt(score)-10;
+    }
+    
+    
     //  IF the item clicked is a fruit, 
     //    increase the socre by 5
     //  ELSE IF the item clicked is a bomb, 
@@ -15,14 +22,7 @@ $(function() {
     
     // HINT: use the .hasClass() jQuery method to check what the item clicked is
 
-
-
-
-
-
-
-    
-    $("#score").text(score);
+     $("#score").text(score);
 
     var fruitPath = item.attr("src");
     var splatPath = fruitPath.replace(".png", "-splat.png");
@@ -43,12 +43,10 @@ $(function() {
     //   then call the .fadeOut() method on the board
     //   and change the title text to say "Game Over!" 
 
-
-
-
-
-
-
+      if (bombCounter > 2) {
+      $("#board").fadeOut();
+      $("#title").text("Game Over!");
+    }
 
   });
 });

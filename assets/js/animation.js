@@ -1,3 +1,5 @@
+/*global $*/
+
 $.fn.bounce = function(options) {
     
   var settings = $.extend({
@@ -61,6 +63,6 @@ $.fn.bounce = function(options) {
   });
 };
 
-$(function() {
-  $('#board img').bounce();
-});
+      $(function() {
+      $('#board img').bounce();
+  });
