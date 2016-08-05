@@ -1,6 +1,6 @@
 /*global $*/
     $(function() {
-    var bombCounter = 0;
+    var bombCounter = 4;
 
     $('#board img').click(function() {
     var item = $(this);
@@ -42,11 +42,14 @@
     // IF 3 bombs have been clicked,
     //   then call the .fadeOut() method on the board
     //   and change the title text to say "Game Over!" 
-
-      if (bombCounter > 2) {
+      
+      if (bombCounter > 2 ) {
       $("#board").fadeOut();
       $("#title").text("Game Over!");
     }
 
   });
 });
+
+
+
